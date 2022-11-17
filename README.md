@@ -17,7 +17,9 @@ import GM from 'gmpays'
 
 const gm = new GM({ project, hmacPrivateKey })
 
-await gm.getBalanceStatistics({ currency: 'USD' })
+await gm.getBalanceStatistics({
+  currency: 'USD'
+})
 
 await gm.getDaysBalanceStatistics({
   currency: 'BTC',
