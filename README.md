@@ -15,14 +15,29 @@ $ npm i gmpays
 ```javascript
 import GM from 'gmpays'
 
-const gm = new GM({ project, hmacPrivateKey })
+const gm = new GM({
+  project,
+  hmacPrivateKey,
 
-await gm.getBalanceStatistics({ currency: 'USD' })
+  // Optional. But to make checkouts must be specified
+  rsaPrivateKey: Buffer
+    .from(rsaPrivateKey, 'base64')
+    .toString('utf-8')
+})
+
+await gm.getBalanceStatistics({
+  currency: 'USD'
+})
 
 await gm.getDaysBalanceStatistics({
   currency: 'BTC',
   start: '2032-01-01',
   finish: '2032-12-31'
+})
+
+await gm.getExchangeRate({
+  from: 'USD',
+  to: 'BTC'
 })
 ```
 
