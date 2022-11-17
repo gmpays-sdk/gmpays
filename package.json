@@ -1,6 +1,6 @@
 {
   "name": "gmpays",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "gmpays Node.js Library",
   "keywords": [
     "gm",
@@ -23,7 +23,6 @@
     "type": "git",
     "url": "https://github.com/gmpays-sdk/gmpays"
   },
-  "type": "module",
   "exports": {
     ".": {
       "import": "./index.js",
