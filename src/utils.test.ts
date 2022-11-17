@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-
 import { parametersToString, verifyRsaSignature } from './utils.js'
 
 const testData = {
