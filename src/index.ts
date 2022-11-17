@@ -246,20 +246,15 @@ export interface FastConvertExchangeResponse {
   rate: number
 }
 
-export interface GetExchangeInfoRequest {
-  [key: string]: any
-  minAmount: number
-  maxAmount: number
-  from: string
-  to: string
-  livetime?: number
-  rateType?: 'exchange' | 'invoice' | 'checkout'
+export interface GetExchangeRateRequest {
+	[key: string]: any
+	from: string
+	to: string
 }
 
-export interface GetExchangeInfoResponse {
-  rate: number
-  exchanged_amount_from: number
-  exchanged_amount_to: number
+export interface GetExchangeRateResponse {
+	buy: number
+	sell: number
 }
 
 export interface GetExchangeStatusRequest {
@@ -584,10 +579,10 @@ export default class GameMoney {
     )
   }
 
-  /** For more details and usage information see [docs](https://cp.gmpays.com/apidoc#exchange_info) */
-  public async getExchangeInfo(body: GetExchangeInfoRequest) {
-    return this.request<GetExchangeInfoResponse & GenericResponse>(
-      'exchange/info',
+  /** For more details and usage information see [docs](https://cp.gmpays.com/apidoc#exchange_rate) */
+  public async getExchangeRate(body: GetExchangeRateRequest) {
+    return this.request<GetExchangeRateResponse & GenericResponse>(
+      'exchange/rate',
       body,
     )
   }
