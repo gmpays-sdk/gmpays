@@ -21,7 +21,7 @@ const gm = new GM({
 
   // Optional. But to make checkouts must be specified
   rsaPrivateKey: Buffer
-    .from(process.env.GAMEMONEY_RSA_PRIVATE_KEY ?? '', 'base64')
+    .from(rsaPrivateKey, 'base64')
     .toString('utf-8')
 })
 
